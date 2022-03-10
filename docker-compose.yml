@@ -12,5 +12,23 @@ services:
     - 7006:3306
     networks:
     - test-app
+
+#  dev:
+#    container_name: nestjs_api_dev
+#    image: nestjs-api-dev:1.0.0
+#    build:
+#      context: .
+#      dockerfile: ./Dockerfile
+#    command: npm run start
+#    env_file:
+#      - .env
+#    #network_mode: host
+#    ports:
+#      - 4004:${MAIN_PORT}
+#    volumes:
+#      - .:/usr/src/app
+#      - /usr/src/app/node_modules
+#    restart: unless-stopped
+
 networks:
   test-app:
