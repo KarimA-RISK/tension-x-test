@@ -15,44 +15,44 @@ services:
     networks:
     - test-app
 
-  app:
-    container_name: nestjs_api_dev
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    command: npm run start
-    env_file:
-      - .env
-    ports:
-      - ${MAIN_PORT}:${MAIN_PORT}
-    depends_on:
-      - db
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    restart: unless-stopped
-    networks:
-      - test-app
-
-  migrations-generate:
-    image: tension-x-test_app:latest
-    container_name: migrations-generate
-    command: "npm run migration:generate -n migrations"
-    depends_on:
-      - db
-      - app
-    networks:
-      - test-app
-
-  migrations-run:
-    image: tension-x-test_app:latest
-    command: "npm run migration:run"
-    depends_on:
-      - db
-      - app
-      - migrations-generate
-    networks:
-      - test-app
+#  app:
+#    container_name: nestjs_api_dev
+#    build:
+#      context: .
+#      dockerfile: ./Dockerfile
+#    command: npm run start
+#    env_file:
+#      - .env
+#    ports:
+#      - ${MAIN_PORT}:${MAIN_PORT}
+#    depends_on:
+#      - db
+#    volumes:
+#      - .:/usr/src/app
+#      - /usr/src/app/node_modules
+#    restart: unless-stopped
+#    networks:
+#      - test-app
+#
+#  migrations-generate:
+#    image: tension-x-test_app:latest
+#    container_name: migrations-generate
+#    command: "npm run migration:run"
+#    depends_on:
+#      - db
+#      - app
+#    networks:
+#      - test-app
+#
+#  migrations-run:
+#    image: tension-x-test_app:latest
+#    command: "npm run migration:run"
+#    depends_on:
+#      - db
+#      - app
+#      - migrations-generate
+#    networks:
+#      - test-app
 
 networks:
   test-app:
