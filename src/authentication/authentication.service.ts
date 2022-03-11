@@ -15,7 +15,7 @@ export class AuthenticationService {
             .catch(() => {throw new HttpException(email + ' user not found', HttpStatus.NOT_FOUND)});
         const attempt: boolean = await user.comparePassword(password)
         if (attempt) {
-            const payload = { email: user.email, sub: user.id };
+            const payload = { email: user.email, sub: user.id, roles: user.roles };
             delete user.password;
             return {
                 response: {

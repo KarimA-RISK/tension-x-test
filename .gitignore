@@ -4,9 +4,6 @@
 
 .env
 
-src/migrations/*
-!src/migrations/.gitkeep
-
 # Logs
 logs
 *.log

@@ -5,6 +5,7 @@ import {UserEntity} from "../entities/user.entity";
 import {PassportModule} from "@nestjs/passport";
 import {JwtModule} from "@nestjs/jwt";
 import {ConfigModule} from "@nestjs/config";
+import {JwtStrategy} from "./jwt.strategy";
 
 @Module({
   imports: [ConfigModule, TypeOrmModule.forFeature([UserEntity]), PassportModule, JwtModule.register({
@@ -13,7 +14,7 @@ import {ConfigModule} from "@nestjs/config";
           expiresIn: process.env.TOKEN_EXPIRE_TIME,
         },
   })],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, JwtStrategy],
   exports: [AuthenticationService]
 })
 export class AuthenticationModule {}
