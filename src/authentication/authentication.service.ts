@@ -20,7 +20,7 @@ export class AuthenticationService {
             return {
                 response: {
                     token: await this.jwtService.sign(payload, {
-                        expiresIn: process.env.TOKEN_EXPIRE_TIME,
+                        expiresIn: parseInt(process.env.TOKEN_EXPIRE_TIME),
                         secret: process.env.TOKEN_SECRET
                     }),
                     user
