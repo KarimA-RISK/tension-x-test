@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "2633d0ac-a001-4aa0-9b45-2651e95930bf",
+		"name": "tension-x test-api",
+		"description": "Roles types : Admin, Supervisor, User, Guest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"12345678a\",\n    \"passwordConfirmation\": \"12345678a\",\n    \"roles\": \"Admin\",\n    \"email\": \"admin@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ten-test-host}}/sign-up",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				},
+				"description": "Sign Up"
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"12345678a\",\n    \"email\": \"admin@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ten-test-host}}/sign-in",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"sign-in"
+					]
+				},
+				"description": "Sign In"
+			},
+			"response": []
+		},
+		{
+			"name": "Get guest tab",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInN1YiI6MSwicm9sZXMiOiJhZG1pbiIsImlhdCI6MTY0NzAyNDQ0OCwiZXhwIjoxNjQ3MDI4MDQ4fQ.WDfnucjkJpac6TFgYfGyonhOsK8SZyjWpxxH-MVOBx0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ten-test-host}}/pages/guest",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"pages",
+						"guest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user tab",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInN1YiI6MSwicm9sZXMiOiJhZG1pbiIsImlhdCI6MTY0NzAyNDQ0OCwiZXhwIjoxNjQ3MDI4MDQ4fQ.WDfnucjkJpac6TFgYfGyonhOsK8SZyjWpxxH-MVOBx0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ten-test-host}}/pages/user",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"pages",
+						"user"
+					]
+				},
+				"description": "Get user tab"
+			},
+			"response": []
+		},
+		{
+			"name": "Get supervisor tab",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInN1YiI6MSwicm9sZXMiOiJhZG1pbiIsImlhdCI6MTY0NzAyNDQ0OCwiZXhwIjoxNjQ3MDI4MDQ4fQ.WDfnucjkJpac6TFgYfGyonhOsK8SZyjWpxxH-MVOBx0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ten-test-host}}/pages/supervisor",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"pages",
+						"supervisor"
+					]
+				},
+				"description": "Get supervisor tab"
+			},
+			"response": []
+		},
+		{
+			"name": "Get admin tab",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInN1YiI6MSwicm9sZXMiOiJhZG1pbiIsImlhdCI6MTY0NzAyNDQ0OCwiZXhwIjoxNjQ3MDI4MDQ4fQ.WDfnucjkJpac6TFgYfGyonhOsK8SZyjWpxxH-MVOBx0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ten-test-host}}/pages/admin",
+					"host": [
+						"{{ten-test-host}}"
+					],
+					"path": [
+						"pages",
+						"admin"
+					]
+				},
+				"description": "Get admin tab"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ten-test-host",
+			"value": "http://127.0.0.1:7005"
+		}
+	]
+}
